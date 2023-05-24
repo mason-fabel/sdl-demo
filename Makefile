@@ -5,7 +5,7 @@ BUILD_DIR = build
 CC = clang
 WARNINGS = -Wall -Wextra -Werror -Wpedantic
 CFLAGS = -std=c17 -I$(INCLUDE_DIR) `sdl2-config --cflags`
-LDLIBS = `sdl2-config --libs`
+LDLIBS = `sdl2-config --libs` -lSDL2_image
 
 EXECUTABLE = sdl-demo
 OBJS = $(patsubst $(SOURCE_DIR)/%.c, $(BUILD_DIR)/%.o, $(wildcard $(SOURCE_DIR)/*.c))

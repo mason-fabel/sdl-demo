@@ -1,5 +1,6 @@
 #include <stdbool.h>
 #include <SDL.h>
+#include <SDL_image.h>
 
 #include "globals.h"
 #include "init.h"
