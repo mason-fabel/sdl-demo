@@ -17,6 +17,12 @@ bool init_sdl(void) {
         return false;
     }
 
+    int img_flags = IMG_INIT_PNG;
+    if (!(IMG_Init(img_flags) & img_flags)) {
+        fprintf(stderr, "SDL_image could not initialize: %s\n", IMG_GetError());
+        return false;
+    }
+
     screenSurface = SDL_GetWindowSurface(window);
     if (screenSurface == 0) {
         fprintf(stderr, "Could not get window surface: %s\n", SDL_GetError());
@@ -27,9 +33,9 @@ bool init_sdl(void) {
 }
 
 SDL_Surface* init_load_surface(const char* path) {
-    SDL_Surface* raw_surface = SDL_LoadBMP(path);
+    SDL_Surface* raw_surface = IMG_Load(path);
     if (raw_surface == 0) {
-        fprintf(stderr, "Unable to load image: %s\n", SDL_GetError());
+        fprintf(stderr, "Unable to load image: %s\n", IMG_GetError());
         return 0;
     }
 

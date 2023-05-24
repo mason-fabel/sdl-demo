@@ -17,15 +17,15 @@ int main(void) {
     }
 
     SDL_Surface* image = 0;
-    if ((image = init_load_surface("./resources/sdl.bmp")) == 0) {
+    if ((image = init_load_surface("./resources/wolf3d_redbrick.png")) == 0) {
         return EXIT_FAILURE;
     }
 
     SDL_Rect image_stretch_rect = {
         .x = 0,
         .y = 0,
-        .w = SCREEN_WIDTH,
         .h = SCREEN_HEIGHT,
+        .w = SCREEN_HEIGHT,
     };
 
     bool running = true;
