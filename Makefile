@@ -9,7 +9,7 @@ LDLIBS = `sdl2-config --libs` -lSDL2_image
 
 EXECUTABLE = sdl-demo
 OBJS = $(patsubst $(SOURCE_DIR)/%.c, $(BUILD_DIR)/%.o, $(wildcard $(SOURCE_DIR)/*.c))
-HEADERS = $(wildcard $(SOURCE_DIR)/*.h)
+HEADERS = $(wildcard $(INCLUDE_DIR)/*.h)
 
 .PHONY: all clean
 
