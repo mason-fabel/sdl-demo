@@ -1,0 +1,8 @@
+-Wall
+-Wextra
+-Werror
+-Wpedantic
+-std=c17
+-I./include
+-I/opt/homebrew/include/SDL2
+-D_THREAD_SAFE
